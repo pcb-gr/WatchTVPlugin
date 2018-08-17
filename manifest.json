@@ -1,0 +1,36 @@
+{
+  "name": "Wacth tv plugin",
+  "version": "0.1",
+  "description": "Wacth tv plugin",
+  "manifest_version": 2,
+  "permissions": [
+    "<all_urls>","webRequest","webRequestBlocking", "tabs", "activeTab",
+     "contextMenus",
+    "management",
+    "notifications",
+    "storage",
+    "identity",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"css": [
+				"style.css"
+			],
+			"js": [
+				"jquery-3.3.1.min.js",
+				"playlist.js",
+				"content_script.js"
+			],
+			"run_at": "document_end"
+		}
+	],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  }
+}
